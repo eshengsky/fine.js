@@ -1,0 +1,23 @@
+{
+  "name": "fine.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/eshengsky/fine.js",
+  "authors": [
+    "Sky <eshengsky@163.com>"
+  ],
+  "description": "A fine and practical JavaScript library.",
+  "main": "dist/fine.min.js",
+  "keywords": [
+	"JavaScript",
+	"library"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
