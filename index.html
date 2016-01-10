@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>fine.js by eshengsky</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="lib/css/bootstrap.css"/>
+    <link rel="stylesheet" href="lib/css/prism.css"/>
+    <link rel="stylesheet" href="lib/css/index.css"/>
+</head>
+<body>
+<section class="page-header">
+    <h1 class="project-name">fine.js</h1>
+
+    <h2 class="project-tagline">
+        <p>A fine and practical JavaScript utility library, less than 5KB with compression.</p>
+        <p>一个精细实用的javascript工具库，压缩后不到5KB。</p>
+    </h2>
+    <a href="https://github.com/eshengsky/fine.js" class="btn">View on GitHub</a>
+    <a href="https://github.com/eshengsky/fine.js/zipball/master" class="btn">Download .zip</a>
+    <a href="https://github.com/eshengsky/fine.js/tarball/master" class="btn">Download .tar.gz</a>
+</section>
+
+<section class="main-content container">
+    <h2>Install 安装</h2>
+    <pre><code class="language-bash">$ bower install fine.js</code></pre>
+    <h2>Compatibility 兼容性</h2>
+    <p>Compatible with IE8+, Chrome, Firefox.<br>与IE8及以上浏览器、Chrome、Firefox兼容。</p>
+    <h2>API 编程接口</h2>
+    <div class="split">
+        <span>Element 元素</span>
+    </div>
+    <section>
+        <div>
+            <p>
+                <code>$(selector, [context])</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of accessing DOM elements using CSS selectors, base on native document.querySelectorAll function. 使用CSS选择器访问DOM元素的方法，基于原生的document.querySelectorAll函数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>selector:</strong> CSS selector. CSS选择器。<br>
+                        <strong>[context]:</strong> Optional, define selection range, default value is document. 可选参数，选择器访问范围，默认值document。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">//Get elements with class name 'btn'. 获取类名为 'btn' 的所有元素。
+$('.btn');
+
+//Get input elements in div whose id is 'div1'. 获取id为 'div1' 的元素内的所有input元素。
+$('input', '#div1')</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.hasClass(el, className)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of checking if element has a class. 检查元素是否包含一个类的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>el:</strong> Single element or elements(HTMLCollection or NodeList type). 单个元素或元素集（HTMLCollection 或者 NodeList 类型）。<br>
+                        <strong>className:</strong> Name of the class. 类名。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">//Check the first button if has class 'btn'. 检查第一个button元素是否包含类 'btn'。
+$.hasClass($('button')[0], 'btn');
+
+//Check all button elements if at least one has class 'btn'. 检查所有的button元素是否至少有一个包含类 'btn'。
+$.hasClass($('button'), 'btn');</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.addClass(el, className1, className2,...,classNameN)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of adding class to element. 给元素添加类的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>el:</strong> Single element or elements(HTMLCollection or NodeList type). 单个元素或元素集（HTMLCollection 或者 NodeList 类型）。<br>
+                        <strong>classNameN:</strong> Name of the class. 类名。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">//Add class 'btn' to the first button element. 给第一个button元素添加类 'btn'。
+$.addClass($('button')[0], 'btn');
+
+//Add class 'btn', 'btn-info' and 'btn-lg' to all buttons. 给所有button元素添加'btn', 'btn-info' 和 'btn-lg' 类。
+$.addClass($('button'), 'btn', 'btn-info', 'btn-lg');</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.removeClass(el, className1, className2,...,classNameN)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of removing class to element. 给元素移除类的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>el:</strong> Single element or elements(HTMLCollection or NodeList type). 单个元素或元素集（HTMLCollection 或者 NodeList 类型）。<br>
+                        <strong>classNameN:</strong> Name of the class. 类名。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">//Remove class 'btn' from the first button element. 从第一个button元素上移除类 'btn'。
+$.removeClass($('button')[0], 'btn');
+
+//Remove class 'btn', 'btn-info' and 'btn-lg' from all buttons. 从所有button元素上移除'btn', 'btn-info' 和 'btn-lg' 类。
+$.removeClass($('button'), 'btn', 'btn-info', 'btn-lg');</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.empty(el)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of emptying element (remove all child nodes). 清空元素（移除元素所有子节点）的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>el:</strong> Single element or elements(HTMLCollection or NodeList type). 单个元素或元素集（HTMLCollection 或者 NodeList 类型）。<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">//Empty the first div. 清空第一个div。
+$.empty($('div')[0]);
+
+//Empty all divs which have class 'item'. 清空所有类名包含 'item' 的div。
+$.empty($('.item'));</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.remove(el)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of removing element. 移除元素的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>el:</strong> Single element or elements(HTMLCollection or NodeList type). 单个元素或元素集（HTMLCollection 或者 NodeList 类型）。<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">//Remove the first div. 移除第一个div。
+$.remove($('div')[0]);
+
+//Remove all divs which have class 'item'. 移除所有类名包含 'item' 的div。
+$.remove($('.item'));</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.isElement(obj)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of checking if the object is element. 检查对象是否是元素的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>obj:</strong> Any type parameter. 任意类型参数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">$.isElement($('input')[0]);</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <div class="split">
+        <span>String 字符串</span>
+    </div>
+    <section>
+        <div>
+            <p>
+                <code>$.stringFormat(str, args)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of generating formatted string with template string and argument array. 根据模板字符串和参数数组生成格式化后的字符串的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>str:</strong> The template string with placeholders, the placeholders like '{0}', '{1}'... and '{-1}' return '{', '{-2}' return '}'. 包含占位符的模板字符串，占位符形如'{0}', '{1}'... 并且 '{-1}' 固定返回 '{', '{-2}' 固定返回 '}'。<br>
+                        <strong>args:</strong> The argument array to replace the placeholders within template string. 用来替换模板字符串中占位符的参数数组。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">var temp = 'The {0}.js less than {1}KB with compression, you can install it with {2}. {-1}^_^{-2}';
+var info = $.stringFormat(temp, ['fine', '5', 'bower']);
+//Result: The fine.js less than 5KB with compression, you can install it with bower. {^_^}
+alert(info);</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.parseHTML(str)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of parsing HTML string into HTMLCollection. 转换HTML字符串到HTMLCollection的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>str:</strong> HTML string. HTML字符串。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">//Get elements. 得到节点。
+var els = $.parseHTML('&lt;div&gt;Hello fine.js!&lt;/div&gt;')[0];
+//Append element to body. 将节点添加到body中。
+$('body')[0].appendChild(els);</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.url([url])</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of getting url info. 获取url信息的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>[url]:</strong> Optional, the url address, if undefined will pass the current page url. 可选参数，url地址，如果为空则获取当前页面的url。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">var url = $.url('https://example.com/index.html?lang=zh-cn&tab=show#abc');
+//Result: source url is: https://example.com/index.html?lang=zh-cn&tab=show#abc
+alert('source url is: ' + url.source);
+//Result: protocol is: https
+alert('protocol is: ' + url.protocol);
+//Result: host is: example.com
+alert('host is: ' + url.host);
+//Result: port is:
+alert('port is: ' + url.port);
+//Result: query is: ?lang=zh-cn&tab=show
+alert('query is: ' + url.query);
+//Result: parameter 'lang' is: zh-cn
+alert('lang is: ' + url.params.lang);
+//Result: file is: index.html
+alert('file is: ' + url.file);
+//Result: hash is: abc
+alert('hash is: ' + url.hash);
+//Result: path is: /index.html
+alert('path is: ' + url.path);
+//Result: relative is: /index.html?lang=zh-cn&tab=show#abc
+alert('relative is: ' + url.relative);
+//Result: first segments is: index.html
+alert('first segments is: ' + url.segments);</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.trim(str)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of removing spaces at the beginning and end of string. 去除字符串开头和结尾空格的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>str:</strong> String. 字符串。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">var str = ' ' + 'Hello fine.js!' + '   ';
+str = $.trim(str);
+//Result: Hello fine.js!
+alert(str);</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.byteLength(str)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of getting length of string, one chinese as two characters. 获取字符串长度的方法，一个中文算作两个个字符长度。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>str:</strong> String. 字符串。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">var str = 'Hi 你好';
+//Result: 5
+alert(str.length);
+//Result: 7
+alert($.byteLength(str));</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <div class="split">
+        <span>Array&Object 数组和对象</span>
+    </div>
+    <section>
+        <div>
+            <p>
+                <code>$.each(obj, fn)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Common method of iterating array or attributes in object. 遍历数组或对象属性的通用方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>obj:</strong> The object need to be iterated, support Array, object, HTMLCollection, NodeList. 需要遍历的对象，支持数组、对象、HTMLCollection、NodeList。<br>
+                        <strong>fn:</strong> The callback function on each iterate, 1st parameter of it is index or attribute name, 2nd is iterate element or attribute value, 'this' in function is the iterate element. 每次遍历的回调函数， 函数的第1个参数是序号或属性名称，第2个参数是本次遍历到的元素或属性值， 函数内部的'this'指向本次遍历到的元素或属性值。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">//literate Array 遍历数组
+var names = ['Sky', 'Tom', 'Nancy'];
+$.each(names, function(i, item){
+    alert('Hello! ' + item);
+});
+
+//literate NodeList 遍历NodeList
+var inputs = document.querySelectorAll('input');
+$.each(inputs, function(){
+    alert(this.value);
+});
+
+//literate Object 遍历对象
+var obj = {
+    name: 'Sky',
+    gender: 'Male'
+};
+$.each(obj, function(i, item){
+    alert(i + ' is ' + item);
+});</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.extend(obj1, obj2,...objN)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of extending the first parameter object with others objects from the second parameters. 使用从第2个参数开始的对象来扩展第一个参数位置对象的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>objN:</strong> Object. 对象。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                    <pre><code class="language-javascript">//Clone object. 复制一个对象。
+var obj1 = $.extend({}, {name: 'Sky', gender: 'Male'});
+
+//Extend others to the first object. 扩展其他对象到第一个对象中。
+var obj2 = $.extend({}, {name: 'Sky', gender: 'Male'}, {name: 'Tom'}, {age: 20});
+//Result: Object { name="Tom",  gender="Male",  age=20}</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.isArray(obj)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of checking if an object is array. 检查一个对象是否是数组的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>obj:</strong> Any type parameter. 任意类型参数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">var arr = ['Sky', 'Tom', 'Jack'];
+//Result: true
+alert($.isArray(arr));</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.inArray(item, arr)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of getting item position in array. 获取数组中项的位置的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>item:</strong> The item needs to get position. 需要获取位置的项。<br>
+                        <strong>arr:</strong> Array. 数组。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">var arr = ['Sky', 'Tom', 'Jack'];
+//Result: 2
+alert($.inArray('Jack', arr));
+//Result: -1
+alert($.inArray('Mark', arr));</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.isFunction(obj)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of checking if an object is function. 检查一个对象是否是函数的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>obj:</strong> Any type parameter. 任意类型参数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">var fn = function(){};
+//Result: true
+alert($.isFunction(fn));</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.isRegExp(obj)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of checking if an object is regexp. 检查一个对象是否是正则表达式的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>obj:</strong> Any type parameter. 任意类型参数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">var pattern = /\d+/;
+//Result: true
+alert($.isRegExp(pattern));</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <div class="split">
+        <span>Request 请求数据</span>
+    </div>
+    <section>
+        <div>
+            <p>
+                <code>$.ajax(object)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of loading remote data with http request. 通过http请求加载远程数据的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        The parameter is object, the following is the attributes in it. 参数是一个对象，包括如下属性。<br>
+                        <strong>url:</strong> The remote request url. 远程请求地址。<br>
+                        <strong>[type]:</strong> Optional, the type of request, 'Get' or 'Post', default is 'Get'. 可选参数，请求的类型，'Get' 或者 'Post', 默认值为 'Get'。<br>
+                        <strong>[async]:</strong> Optional, define if async request, true or false, default is true. 可选参数，定义是否异步请求，true或false，默认值为true。<br>
+                        <strong>[data]:</strong> Optional, the data to be sent, default is null. 可选参数，需要被发送的数据，默认值为null。<br>
+                        <strong>[success]:</strong> Optional, the callback method when request succeed. 可选参数，请求成功后的回调函数。<br>
+                        <strong>[error]:</strong> Optional, the callback method when request failed. 可选参数，请求失败后的回调函数。<br>
+                        <strong>[complete]:</strong> Optional, the callback method when request completed. 可选参数，请求完成后的回调函数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">$.ajax({
+    url:'js/fine.js',
+    success: function(data){
+        alert(data);
+    }
+});</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.jsonp(url)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of loading remote data with jsonp type, support for cross domain. 使用jsonp方式加载远程数据的方法，支持跨域。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>url:</strong> The remote request url. 远程请求地址。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">//Sending request. 发送请求。
+$.jsonp('http://www.example.com/?callback=myJsonpCallback');
+
+//Custom callback function, should be the same as the name from server. 自定义的回调函数，必须跟服务器返回的函数名一致。
+function myJsonpCallback(data){
+    alert(data);
+}</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <div class="split">
+        <span>Event 事件</span>
+    </div>
+    <section>
+        <div>
+            <p>
+                <code>$.on(element, eventName, handler)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of adding event to element. 给元素添加事件的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>element:</strong> Single element or elements(HTMLCollection or NodeList type). 单个元素或元素集（HTMLCollection 或者 NodeList 类型）。<br>
+                        <strong>eventName:</strong> The event name. 事件名称。<br>
+                        <strong>handler:</strong> The handler function when trigger the event. 触发事件时的处理函数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">//Handler function. 处理函数。
+var clickHandler = function(event){
+    //Other codes...
+}
+
+//Add click event to the button. 给按钮添加点击事件。
+$.on($('#btn1')[0], 'click', clickHandler);</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.off(element, eventName, handler)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of removing event from element. 从元素上移除事件的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>element:</strong> Single element or elements(HTMLCollection or NodeList type). 单个元素或元素集（HTMLCollection 或者 NodeList 类型）。<br>
+                        <strong>eventName:</strong> The event name. 事件名称。<br>
+                        <strong>handler:</strong> The handler function when trigger the event. 触发事件时的处理函数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">//Remove click event from the button. 从按钮上移除点击事件。
+$.off($('#btn1')[0], 'click', clickHandler);</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.getEvent(event)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of getting event object in handler function. 获取处理函数中event对象的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>event:</strong> The parameter in handler function. 处理函数的参数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">//Handler function. 处理函数。
+var clickHandler = function(event){
+    //Get real event object
+    event = $.getEvent(event);
+    //Result: click
+    alert(event.type);
+    //Other codes...
+}
+
+//Add click event to the button. 给按钮添加点击事件。
+$.on($('#btn1')[0], 'click', clickHandler);</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.getTarget(event)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of getting target of event in handler function. 获取处理函数中target的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>event:</strong> The parameter in handler function. 处理函数的参数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">//Handler function. 处理函数。
+var clickHandler = function(event){
+    var target;
+    event = $.getEvent(event);
+    //Get real target
+    target = $.getTarget(event);
+    //Result: btn1
+    alert(target.id);
+    //Other codes...
+}
+
+//Add click event to the button. 给按钮添加点击事件。
+$.on($('#btn1')[0], 'click', clickHandler);</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p>
+                <code>$.preventDefault(event)</code>
+            </p>
+            <table class="table table-condensed">
+                <tr>
+                    <td>Description<br>描述</td>
+                    <td>
+                        Method of preventing default event. 阻止默认事件的方法。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Parameter<br>参数</td>
+                    <td>
+                        <strong>event:</strong> The parameter in handler function. 处理函数的参数。
+                    </td>
+                </tr>
+                <tr>
+                    <td>Usage<br>示例</td>
+                    <td>
+                        <pre><code class="language-javascript">//Handler function. 处理函数。
+var clickHandler = function(event){
+    //Cancel the default submit event
+    $.preventDefault(event);
+    //Other codes...
+}
+
+//Add click event to the button. 给按钮添加点击事件。
+$.on($('button[type=submit]')[0], 'click', clickHandler);</code></pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/eshengsky/fine.js">fine.js</a> is maintained by <a
+                href="https://github.com/eshengsky">eshengsky</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+    </footer>
+</section>
+<script type="text/javascript" src="lib/js/prism.js"></script>
+<script type="text/javascript" src="src/fine.js"></script>
+</body>
+</html>
