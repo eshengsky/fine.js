@@ -1,9 +1,9 @@
 # fine.js
-A fine and practical JavaScript library, less than 3KB with compression.  
-一个精细实用的javascript库，压缩后不到3KB。
+A fine, tiny and practical JavaScript utility library, less than 5KB with compression.  
+一个精致、小巧、实用的javascript工具库，压缩后不到5KB。
 
-### Install 安装
-`$ bower install fine.js`
+### Install 安装 
+`$ bower install fine.js`  
 
 ### Document 文档
 [http://eshengsky.github.io/fine.js/](http://eshengsky.github.io/fine.js/)

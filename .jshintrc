@@ -15,5 +15,6 @@
   "maxparams": 6,
   "maxdepth": 6,
   "asi": true,
-  "elision": true
+  "elision": true,
+  "loopfunc": true
 }

@@ -5,11 +5,13 @@
   "authors": [
     "Sky <eshengsky@163.com>"
   ],
-  "description": "A fine and practical JavaScript library.",
+  "description": "A fine, tiny and practical JavaScript utility library.",
   "main": "dist/fine.min.js",
   "keywords": [
 	"JavaScript",
-	"library"
+    "utility",
+	"library",
+    "fine.js"
   ],
   "license": "MIT",
   "ignore": [

@@ -3,7 +3,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         jshint: {
-            build: ['Gruntfile.js', 'src/*.js'],
+            build: ['Gruntfile.js', 'src/fine.js'],
             options: {
                 jshintrc: '.jshintrc'
             }
@@ -18,8 +18,8 @@ module.exports = function (grunt) {
 
         watch: {
             build: {
-                files: ['src/*.js'],
-                tasks: ['jshint', 'uglify', 'copy'],
+                files: ['src/fine.js'],
+                tasks: ['jshint', 'uglify'],
                 options: {spawn: false}
             }
         }
